@@ -63,16 +63,12 @@
 \contentsline {subsection}{\numberline {6.3.6}Labeled unrooted trees}{13}{subsection.6.3.6}%
 \contentsline {subsection}{\numberline {6.3.7}Catalan numbers}{13}{subsection.6.3.7}%
 \contentsline {chapter}{\numberline {7}Graph}{13}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Fundamentals}{13}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Network flow}{13}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Matching}{15}{section.7.3}%
-\contentsline {section}{\numberline {7.4}DFS algorithms}{15}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Coloring}{15}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Heuristics}{15}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Trees}{15}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Math}{17}{section.7.8}%
-\contentsline {subsection}{\numberline {7.8.1}Number of Spanning Trees}{17}{subsection.7.8.1}%
-\contentsline {subsection}{\numberline {7.8.2}Erdős–Gallai theorem}{17}{subsection.7.8.2}%
+\contentsline {section}{\numberline {7.1}Network flow}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Matching}{15}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trees}{15}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Math}{17}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Number of Spanning Trees}{17}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Erdős–Gallai theorem}{17}{subsection.7.4.2}%
 \contentsline {chapter}{\numberline {8}Geometry}{17}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Geometric primitives}{17}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Circles}{18}{section.8.2}%

@@ -124,23 +124,19 @@
 \contentsline {chapter}{\numberline {7}Graph}{13}{chapter.7}%
 \ttl@stoptoc {chapters@6}
 \ttl@starttoc {chapters@7}
-\contentsline {section}{\numberline {7.1}Fundamentals}{13}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Network flow}{13}{section.7.2}%
-\contentsline {subsection}{\texttt {Dinitz.cpp}\hspace {0.2em}}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.1}Network flow}{13}{section.7.1}%
+\contentsline {subsection}{\texttt {Dinitz.cpp}\hspace {0.2em}}{13}{section.7.1}%
 \contentsline {subsection}{\texttt {MinCostMaxFlow.cpp}\hspace {0.2em}}{14}{lstnumber.7.1.68}%
 \contentsline {subsection}{\texttt {LowerBoundMaxFlow.cpp}\hspace {0.2em}}{14}{lstnumber.7.2.115}%
-\contentsline {section}{\numberline {7.3}Matching}{15}{section.7.3}%
-\contentsline {subsection}{\texttt {Hungarian.cpp}\hspace {0.2em}}{15}{section.7.3}%
+\contentsline {section}{\numberline {7.2}Matching}{15}{section.7.2}%
+\contentsline {subsection}{\texttt {Hungarian.cpp}\hspace {0.2em}}{15}{section.7.2}%
 \contentsline {subsection}{\texttt {Blossom.cpp}\hspace {0.2em}}{15}{lstnumber.7.4.42}%
-\contentsline {section}{\numberline {7.4}DFS algorithms}{15}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Coloring}{15}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Heuristics}{15}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Trees}{15}{section.7.7}%
-\contentsline {subsection}{\texttt {LinkCutTree.cpp}\hspace {0.2em}}{15}{section.7.7}%
+\contentsline {section}{\numberline {7.3}Trees}{15}{section.7.3}%
+\contentsline {subsection}{\texttt {LinkCutTree.cpp}\hspace {0.2em}}{15}{section.7.3}%
 \contentsline {subsection}{\texttt {Block-Cut-Tree.cpp}\hspace {0.2em}}{16}{lstnumber.7.6.208}%
-\contentsline {section}{\numberline {7.8}Math}{17}{section.7.8}%
-\contentsline {subsection}{\numberline {7.8.1}Number of Spanning Trees}{17}{subsection.7.8.1}%
-\contentsline {subsection}{\numberline {7.8.2}Erdős–Gallai theorem}{17}{subsection.7.8.2}%
+\contentsline {section}{\numberline {7.4}Math}{17}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Number of Spanning Trees}{17}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Erdős–Gallai theorem}{17}{subsection.7.4.2}%
 \contentsline {chapter}{\numberline {8}Geometry}{17}{chapter.8}%
 \ttl@stoptoc {chapters@7}
 \ttl@starttoc {chapters@8}
@@ -151,7 +147,7 @@
 \contentsline {subsection}{\texttt {SegmentIntersection.h}\hspace {0.2em}}{17}{lstnumber.8.3.6}%
 \contentsline {subsection}{\texttt {lineIntersection.h}\hspace {0.2em}}{17}{lstnumber.8.4.13}%
 \contentsline {subsection}{\texttt {sideOf.h}\hspace {0.2em}}{17}{lstnumber.8.5.8}%
-\contentsline {subsection}{\texttt {OnSegment.h}\hspace {0.2em}}{18}{lstnumber.8.6.9}%
+\contentsline {subsection}{\texttt {OnSegment.h}\hspace {0.2em}}{17}{lstnumber.8.6.9}%
 \contentsline {subsection}{\texttt {linearTransformation.h}\hspace {0.2em}}{18}{lstnumber.8.7.3}%
 \contentsline {subsection}{\texttt {Angle.h}\hspace {0.2em}}{18}{lstnumber.8.8.6}%
 \contentsline {section}{\numberline {8.2}Circles}{18}{section.8.2}%
@@ -163,7 +159,7 @@
 \contentsline {section}{\numberline {8.3}Polygons}{18}{section.8.3}%
 \contentsline {subsection}{\texttt {InsidePolygon.h}\hspace {0.2em}}{18}{section.8.3}%
 \contentsline {subsection}{\texttt {PolygonArea.h}\hspace {0.2em}}{18}{lstnumber.8.15.11}%
-\contentsline {subsection}{\texttt {PolygonCenter.h}\hspace {0.2em}}{19}{lstnumber.8.16.6}%
+\contentsline {subsection}{\texttt {PolygonCenter.h}\hspace {0.2em}}{18}{lstnumber.8.16.6}%
 \contentsline {subsection}{\texttt {PolygonCut.h}\hspace {0.2em}}{19}{lstnumber.8.17.9}%
 \contentsline {subsection}{\texttt {ConvexHull.h}\hspace {0.2em}}{19}{lstnumber.8.18.13}%
 \contentsline {subsection}{\texttt {HullDiameter.h}\hspace {0.2em}}{19}{lstnumber.8.19.13}%
