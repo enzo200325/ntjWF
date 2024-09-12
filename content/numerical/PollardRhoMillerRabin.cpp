@@ -4,7 +4,7 @@
  * License: 
  * Source: 
  * Description: Pollard Rho and Miller Rabin
- * Time: rho is expected to run in O(\sqrt[4]{n}), and miller rabin is O(\log n). Factorize is O(\log n) expected.
+ * Time:
 */
 
 namespace MillerRabin {
