@@ -1,5 +1,5 @@
 /**
- * Author: 
+ * Author: Nos mesmos
  * Date: 
  * License: 
  * Source: 
