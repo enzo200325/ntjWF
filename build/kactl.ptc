@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {4.2}Polynomials and recurrences}{6}{section.4.2}%
 \contentsline {subsection}{\texttt {TaylorShift.cpp}\hspace {0.2em}}{6}{section.4.2}%
 \contentsline {subsection}{\texttt {EvaluateInterpolation.cpp}\hspace {0.2em}}{6}{lstnumber.4.2.18}%
-\contentsline {section}{\numberline {4.3}MIT Polynomials}{6}{section.4.3}%
+\contentsline {section}{\numberline {4.3}MIT Numerical}{6}{section.4.3}%
 \contentsline {subsection}{\texttt {GoldenSectionSearch.h}\hspace {0.2em}}{6}{section.4.3}%
 \contentsline {subsection}{\texttt {Polynomial.h}\hspace {0.2em}}{6}{lstnumber.4.4.14}%
 \contentsline {subsection}{\texttt {PolyRoots.h}\hspace {0.2em}}{6}{lstnumber.4.5.17}%
@@ -70,10 +70,8 @@
 \contentsline {subsection}{\texttt {SolveLinearBinary.h}\hspace {0.2em}}{8}{lstnumber.4.17.7}%
 \contentsline {subsection}{\texttt {MatrixInverse.h}\hspace {0.2em}}{9}{lstnumber.4.18.34}%
 \contentsline {subsection}{\texttt {Tridiagonal.h}\hspace {0.2em}}{9}{lstnumber.4.19.35}%
-\contentsline {section}{\numberline {4.4}Optimization}{9}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Matrices}{9}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Convolutions}{9}{section.4.6}%
-\contentsline {subsection}{\texttt {FFT.cpp}\hspace {0.2em}}{9}{section.4.6}%
+\contentsline {section}{\numberline {4.4}Convolutions}{9}{section.4.4}%
+\contentsline {subsection}{\texttt {FFT.cpp}\hspace {0.2em}}{9}{section.4.4}%
 \contentsline {subsection}{\texttt {NTT.cpp}\hspace {0.2em}}{9}{lstnumber.4.21.67}%
 \contentsline {subsection}{\texttt {NTTBigModulo.cpp}\hspace {0.2em}}{10}{lstnumber.4.22.37}%
 \contentsline {subsection}{\texttt {Convolutions.cpp}\hspace {0.2em}}{10}{lstnumber.4.23.78}%
@@ -101,8 +99,8 @@
 \contentsline {subsection}{\texttt {ContinuedFractions.h}\hspace {0.2em}}{12}{section.5.4}%
 \contentsline {subsection}{\texttt {FracBinarySearch.h}\hspace {0.2em}}{12}{lstnumber.5.14.21}%
 \contentsline {section}{\numberline {5.5}Pythagorean Triples}{12}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Primes}{13}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Estimates}{13}{section.5.7}%
+\contentsline {section}{\numberline {5.6}Primes}{12}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Estimates}{12}{section.5.7}%
 \contentsline {section}{\numberline {5.8}Mobius Function}{13}{section.5.8}%
 \contentsline {chapter}{\numberline {6}Combinatorial}{13}{chapter.6}%
 \ttl@stoptoc {chapters@5}
@@ -124,7 +122,7 @@
 \contentsline {subsection}{\numberline {6.3.3}Eulerian numbers}{13}{subsection.6.3.3}%
 \contentsline {subsection}{\numberline {6.3.4}Stirling numbers of the second kind}{13}{subsection.6.3.4}%
 \contentsline {subsection}{\numberline {6.3.5}Bell numbers}{13}{subsection.6.3.5}%
-\contentsline {subsection}{\numberline {6.3.6}Labeled unrooted trees}{14}{subsection.6.3.6}%
+\contentsline {subsection}{\numberline {6.3.6}Labeled unrooted trees}{13}{subsection.6.3.6}%
 \contentsline {subsection}{\numberline {6.3.7}Catalan numbers}{14}{subsection.6.3.7}%
 \contentsline {chapter}{\numberline {7}Graph}{14}{chapter.7}%
 \ttl@stoptoc {chapters@6}
@@ -174,8 +172,8 @@
 \contentsline {subsection}{\texttt {HullDiameter.h}\hspace {0.2em}}{19}{lstnumber.8.19.13}%
 \contentsline {subsection}{\texttt {PointInsideHull.h}\hspace {0.2em}}{19}{lstnumber.8.20.12}%
 \contentsline {subsection}{\texttt {LineHullIntersection.h}\hspace {0.2em}}{19}{lstnumber.8.21.14}%
-\contentsline {section}{\numberline {8.4}Misc. Point Set Problems}{20}{section.8.4}%
-\contentsline {subsection}{\texttt {ClosestPair.h}\hspace {0.2em}}{20}{section.8.4}%
+\contentsline {section}{\numberline {8.4}Misc. Point Set Problems}{19}{section.8.4}%
+\contentsline {subsection}{\texttt {ClosestPair.h}\hspace {0.2em}}{19}{section.8.4}%
 \contentsline {subsection}{\texttt {kdTree.h}\hspace {0.2em}}{20}{lstnumber.8.23.17}%
 \contentsline {subsection}{\texttt {FastDelaunay.h}\hspace {0.2em}}{20}{lstnumber.8.24.63}%
 \contentsline {section}{\numberline {8.5}3D}{20}{section.8.5}%
@@ -200,7 +198,7 @@
 \contentsline {section}{\numberline {10.2}Misc. algorithms}{22}{section.10.2}%
 \contentsline {subsection}{\texttt {TernarySearch.h}\hspace {0.2em}}{22}{section.10.2}%
 \contentsline {subsection}{\texttt {LIS.h}\hspace {0.2em}}{22}{lstnumber.10.4.11}%
-\contentsline {subsection}{\texttt {FastKnapsack.h}\hspace {0.2em}}{23}{lstnumber.10.5.17}%
+\contentsline {subsection}{\texttt {FastKnapsack.h}\hspace {0.2em}}{22}{lstnumber.10.5.17}%
 \contentsline {section}{\numberline {10.3}Dynamic programming}{23}{section.10.3}%
 \contentsline {subsection}{\texttt {KnuthDP.h}\hspace {0.2em}}{23}{section.10.3}%
 \contentsline {subsection}{\texttt {DivideAndConquerDP.h}\hspace {0.2em}}{23}{lstnumber.10.7.1}%
@@ -211,6 +209,4 @@
 \contentsline {subsection}{\texttt {FastMod.h}\hspace {0.2em}}{23}{subsection.10.5.2}%
 \contentsline {subsection}{\texttt {FastInput.h}\hspace {0.2em}}{23}{lstnumber.10.9.8}%
 \contentsline {subsection}{\texttt {BumpAllocator.h}\hspace {0.2em}}{23}{lstnumber.10.10.17}%
-\ttl@stoptoc {chapters@10}
-\ttl@starttoc {chapters@11}
 \contentsfinish 
