@@ -75,12 +75,12 @@
 \contentsline {section}{\numberline {8.1}Geometric primitives}{17}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Circles}{18}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Polygons}{19}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Misc. Point Set Problems}{19}{section.8.4}%
-\contentsline {section}{\numberline {8.5}3D}{20}{section.8.5}%
+\contentsline {section}{\numberline {8.4}Misc. Point Set Problems}{20}{section.8.4}%
+\contentsline {section}{\numberline {8.5}3D}{21}{section.8.5}%
 \contentsline {chapter}{\numberline {9}Strings}{21}{chapter.9}%
 \contentsline {chapter}{\numberline {10}Various}{22}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Intervals}{22}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Misc. algorithms}{22}{section.10.2}%
+\contentsline {section}{\numberline {10.2}Misc. algorithms}{23}{section.10.2}%
 \contentsline {section}{\numberline {10.3}Dynamic programming}{23}{section.10.3}%
 \contentsline {section}{\numberline {10.4}Debugging tricks}{23}{section.10.4}%
 \contentsline {section}{\numberline {10.5}Optimization tricks}{23}{section.10.5}%
