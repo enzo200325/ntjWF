@@ -1,75 +1,75 @@
 /**
- * Author: Dudu
+ * Author: UFMG
  * Date: 
  * License: 
  * Source: 
  * Description: Block cut tree
  * Time: O(n + m)
+ * Usage: art[i] responde o numero de novas componentes conexas
+ criadas apos a remocao de i do grafo g
+ Se art[i] >= 1, i eh ponto de articulacao
+ Para todo i < blocks.size()
+ blocks[i] eh uma componente 2-vertice-conexa maximal
+ edgblocks[i] sao as arestas do bloco i
+ tree[i] eh um vertice da arvore que corresponde ao bloco i
  * Status: 
  */
 
-struct Bct {
-    int T;
-    vector<int> tin, low, stk, art, id, splits;
-    vector<vector<int>> adj, g, comp, up;
-    int n, sz, m;
-    void build(int _n, int _m) {
-        n = _n, m = _m;
-        adj.resize(n);
-    }
-    void add_edge(int u, int v) {
-        adj[u].emplace_back(v);
-        adj[v].emplace_back(u);
-    }
-    void dfs(int u, int p) {
-        low[u] = tin[u] = ++T;
-        stk.emplace_back(u);
-        for (auto v : adj[u]) {
-            if (tin[v] == -1) {
-                dfs(v, u);
-                low[u] = min(low[u], low[v]);
-                if (low[v] >= tin[u]) {
-                    int x;
-                    sz++;
-                    do {
-                        assert(stk.size());
-                        x = stk.back();
-                        stk.pop_back();
-                        comp[x].emplace_back(sz);
-                    } while (x != v);
-                    comp[u].emplace_back(sz);
-                }
-            } else if (v != p) {
-                low[u] = min(low[u], tin[v]);
-            }
-        }
-    }
-    inline bool is_articulation_point(int u) { return art[id[u]]; }
-    inline int number_of_splits(int u) { return splits[id[u]]; }
-    void work() {
-        T = sz = 0;
-        stk.clear();
-        tin.resize(n, -1);
-        comp.resize(n);
-        low.resize(n);
-        for (int i = 0; i < n; i++)
-            if (tin[i] == -1) dfs(i, 0);
-        art.resize(sz + n + 1);
-        splits.resize(n + sz + 1, 1);
-        id.resize(n);
-        g.resize(sz + n + 1);
-        for (int i = 0; i < n; i++) {
-            if ((int)comp[i].size() > 1) {
-                id[i] = ++sz;
-                art[id[i]] = 1;
-                splits[id[i]] = (int)comp[i].size();
-                for (auto u : comp[i]) {
-                    g[id[i]].emplace_back(u);
-                    g[u].emplace_back(id[i]);
-                }
-            } else if (comp[i].size()) {
-                id[i] = comp[i][0];
-            }
-        }
-    }
+struct block_cut_tree {
+	vector<vector<int>> g, blocks, tree;
+	vector<vector<pair<int, int>>> edgblocks;
+	stack<int> s;
+	stack<pair<int, int>> s2;
+	vector<int> id, art, pos;
+	
+	block_cut_tree(vector<vector<int>> g_) : g(g_) {
+		int n = g.size();
+		id.resize(n, -1), art.resize(n), pos.resize(n);
+		build();
+	}
+
+	int dfs(int i, int& t, int p = -1) {
+		int lo = id[i] = t++;
+		s.push(i);	
+		
+		if (p != -1) s2.emplace(i, p);
+		for (int j : g[i]) if (j != p and id[j] != -1) s2.emplace(i, j);
+		
+		for (int j : g[i]) if (j != p) {
+			if (id[j] == -1) {
+				int val = dfs(j, t, i);
+				lo = min(lo, val);
+
+				if (val >= id[i]) {
+					art[i]++;
+					blocks.emplace_back(1, i);
+					while (blocks.back().back() != j) 
+						blocks.back().push_back(s.top()), s.pop();
+
+					edgblocks.emplace_back(1, s2.top()), s2.pop();
+					while (edgblocks.back().back() != pair(j, i))
+						edgblocks.back().push_back(s2.top()), s2.pop();
+				}
+				// if (val > id[i]) aresta i-j eh ponte
+			}
+			else lo = min(lo, id[j]);
+		}
+		
+		if (p == -1 and art[i]) art[i]--;
+		return lo;
+	}
+
+	void build() {
+		int t = 0;
+		for (int i = 0; i < g.size(); i++) if (id[i] == -1) dfs(i, t, -1);
+		
+		tree.resize(blocks.size());
+		for (int i = 0; i < g.size(); i++) if (art[i]) 
+			pos[i] = tree.size(), tree.emplace_back();
+
+		for (int i = 0; i < blocks.size(); i++) for (int j : blocks[i]) {
+			if (!art[j]) pos[j] = i;
+			else tree[i].push_back(pos[j]), tree[pos[j]].push_back(i);
+		}
+	}
 };

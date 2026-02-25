@@ -3,91 +3,79 @@
  * Date: 
  * License: 
  * Source: 
- * Description:
- * Time:
+ * Description: Fast Walsh Hadamard Transform, FWHT<OP> gives the transformation for the operation OP in c++ like syntax 
+ * Time: O(nlog(n))
  * Status: 
  */
 
-vector<mint> and_convolution(vector<mint> A, vector<mint> B) {
-    int n = (int)max(A.size(), B.size());
-    int N = 0;
-    while ((1 << N) < n) N++;
-    A.resize(1 << N);
-    B.resize(1 << N);
-    vector<mint> C(1 << N);
-    for (int j = 0; j < N; j++) {
-        for (int i = (1 << N) - 1; i >= 0; i--) {
-            if (~i >> j & 1) {
-                A[i] += A[i | (1 << j)];
-                B[i] += B[i | (1 << j)];
-            }
-        }
-    }
-    for (int i = 0; i < 1 << N; i++) C[i] = A[i] * B[i];
-    for (int j = 0; j < N; j++) {
-        for (int i = 0; i < 1 << N; i++)
-            if (~i >> j & 1) C[i] -= C[i | (1 << j)];
-    }
-    return C;
+
+template<char op, class T> vector<T> FWHT(vector<T> f, bool inv = false) {
+	int n = f.size();
+	for (int k = 0; (n-1)>>k; k++) for (int i = 0; i < n; i++) if (i>>k&1) {
+		int j = i^(1<<k);
+		if (op == '^') f[j] += f[i], f[i] = f[j] - 2*f[i];
+		if (op == '|') f[i] += (inv ? -1 : 1) * f[j];
+		if (op == '&') f[j] += (inv ? -1 : 1) * f[i];
+	}
+	if (op == '^' and inv) for (auto& i : f) i /= n;
+	return f;
 }
 
-vector<mint> gcd_convolution(vector<mint> A, vector<mint> B) {
-    int N = (int)max(A.size(), B.size());
-    A.resize(N + 1);
-    B.resize(N + 1);
-    vector<mint> C(N + 1);
-    for (int i = 1; i <= N; i++) {
-        mint a = 0;
-        mint b = 0;
-        for (int j = i; j <= N; j += i) {
-            a += A[j];
-            b += B[j];
-        }
-        C[i] = a * b;
-    }
-    for (int i = N; i >= 1; i--)
-        for (int j = 2 * i; j <= N; j += i) C[i] -= C[j];
-    return C;
-}
+// Generalizacao de FWHT de Xor
+//
+// Convolucao de soma mod B, usar tamanho potencia de B!!
+// Precisa definir o tipo T e a raiz primitiva g
+// satisfazendo g^b == g
+//
+// Se possivel, hardcodar a multiplicacao de matriz 
+// feita em cada iteracao faz ficar bem mais rapido
+//
+// O(n b log_b(n))
+// Exemplos da FWHT Generalizada:
+//
+// mod 7, resposta mod 998244353:
+// T = mint, g = 14553391
+//
+// mod 3, resposta cabe em um long long:
+// T = array<ll, 2>, g = {0, 1};
+//
+// using T = array<ll, 2>;
+// T operator +(const T& a, const T& b) {
+// 	return T{a[0] + b[0], a[1] + b[1]};
+// }
+// T operator *(const T& a, const T& b) {
+// 	return T{a[0] * b[0] - a[1] * b[1], 
+// 		     a[0] * b[1] + a[1] * b[0] - a[1] * b[1]};
+// };
+// T operator /(const T& a, const int& b) {
+// 	return T{a[0] / b, a[1] / b};
+// }
 
-vector<mint> lcm_convolution(vector<mint> A, vector<mint> B) {
-    int N = (int)max(A.size(), B.size());
-    A.resize(N + 1);
-    B.resize(N + 1);
-    vector<mint> C(N + 1), a(N + 1), b(N + 1);
-    for (int i = 1; i <= N; i++) {
-        for (int j = i; j <= N; j += i) {
-            a[j] += A[i];
-            b[j] += B[i];
-        }
-        C[i] = a[i] * b[i];
-    }
-    for (int i = 1; i <= N; i++)
-        for (int j = 2 * i; j <= N; j += i) C[j] -= C[i];
-    return C;
-}
 
-vector<mint> or_convolution(vector<mint> A, vector<mint> B) {
-    int n = (int)max(A.size(), B.size());
-    int N = 0;
-    while ((1 << N) < n) N++;
-    A.resize(1 << N);
-    B.resize(1 << N);
-    vector<mint> C(1 << N);
-    for (int j = 0; j < N; j++) {
-        for (int i = 0; i < 1 << N; i++) {
-            if (i >> j & 1) {
-                A[i] += A[i ^ (1 << j)];
-                B[i] += B[i ^ (1 << j)];
-            }
-        }
-    }
-    for (int i = 0; i < 1 << N; i++) C[i] = A[i] * B[i];
-    for (int j = N - 1; j >= 0; j--) {
-        for (int i = (1 << N) - 1; i >= 0; i--)
-            if (i >> j & 1) C[i] -= C[i ^ (1 << j)];
-    }
-    return C;
+template<class T>
+vector<T> FWHT(vector<T> f, int b, T g, bool inv = false) {
+	int n = f.size();
+ 
+	vector<T> w(b);
+	w[1] = g;
+	for (int i = 2; i < b; i++) w[i] = w[i - 1] * g;
+	w[0] = w[b - 1] * g;
+ 
+	if (inv) reverse(w.begin() + 1, w.end());
+ 
+	for (int pot = 1; pot < n; pot *= b) {
+		for (int i = 0; i < n; i++) if (!(i / pot % b)) {
+			vector<T> res(b);
+			for (int j = 0; j < b; j++) {
+				for (int k = 0; k < b; k++)
+					res[j] = res[j] + w[j * k % b] * f[i + k * pot];
+				if (inv) res[j] = res[j] / b;
+			}
+			for (int j = 0; j < b; j++) f[i + j * pot] = res[j];
+		}
+	}
+ 
+	return f;
 }
 
 vector<mint> subset_convolution(vector<mint> A, vector<mint> B) {
@@ -127,49 +115,5 @@ vector<mint> subset_convolution(vector<mint> A, vector<mint> B) {
         int popcnt = __builtin_popcount(i);
         ans[i] = c[i][popcnt];
     }
-    return ans;
-}
-
-vector<mint> xor_convolution(vector<mint> A, vector<mint> B) {
-    int n = int(A.size());
-    for (int rep = 0; rep < 2; rep++) {
-        for (int len = n >> 1; len; len >>= 1) {
-            for (int i = 0; i < n; i += len << 1) {
-                for (int j = 0; j < len; j++) {
-                    int id = i + j;
-                    mint x = A[id];
-                    mint y = A[id + len];
-                    A[id] = x + y;
-                    A[id + len] = x - y;
-                }
-            }
-        }
-        swap(A, B);
-    }
-    vector<mint> ans(n);
-    for (int i = 0; i < n; i++) ans[i] = A[i] * B[i];
-    for (int len = 1; len < n; len <<= 1) {
-        for (int i = 0; i < n; i += len << 1) {
-            for (int j = 0; j < len; j++) {
-                int id = i + j;
-                mint x = ans[id];
-                mint y = ans[id + len];
-                ans[id] = x + y;
-                ans[id + len] = x - y;
-            }
-        }
-    }
-    return ans;
-}
-
-vector<mint> xor_multiply(vector<mint> A, vector<mint> B) {
-    int N = 1;
-    int n = int(max(A.size(), B.size()));
-    while (N < n) N <<= 1;
-    A.resize(N);
-    B.resize(N);
-    auto ans = xor_convolution(A, B);
-    for (int i = 0; i < N; i++) ans[i] /= N;
-
     return ans;
 }
