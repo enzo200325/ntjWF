@@ -2,7 +2,7 @@
  * Author: UFMG
  * Date: 
  * Source: 
- * Description: Computa A+B = {a+b : a \in A, b \in B}, em que
+ * Description: Computa A+B = {a+b : a in A, b in B}, em que
  A e B sao poligonos convexos
  A+B eh um poligono convexo com no max n + m pontos
  * Time: O(n + m)
